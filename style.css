@@ -1,64 +1,26 @@
-.red{
-  color: red;
-  background-color: rgb(240, 163, 14);
-  display: inline-block;
-  /* margin: 30px; */
-  /* Float does not inherit */
-  /* float: left; */
-  /* Margin does not inherit */
-  /* margin: 0; */
-}
-p.green{
-  background-color: green;
-  /* display: inline; */
-  /* float: left; */
-  /* margin: 0; */
-  /* margin: auto; */
-}
-p{
-  color: blue;
-  /* display: inline; */
-  /* float: right; */
-}
-span{
-  /* float: right */
-  /* display: block; */
-}
-p[test]{
-  font-size: 80px;
-}
 
-/* ===Equal specificity means CSS order wins=== */
-.box{
-  width: 300px;
-  height: 300px;
-  background-color: rgb(255, 120, 23);
-}
 
-div .inner-box {
-  width: 40%;
-  height: 40%;
-  background-color: rgb(255, 183, 23);
-}
 
-.box div{
-  /* width: 100%; */
-  background-color: blue;
-}
 
-div.box{
-  background-color: green;
-}
+/* ==="h2" > "div, h2"=== */
+/* div, h2{color: red;}
+h2{color: green;} */
 
-div.inner-2{
-  height: 30px;
-  background-color: red;
-}
+/* ==="h2 href" > "div h2" > "h1, h2, h3"
+      "h2[att] > "h2"                    === */
+/* div h2{color: red;}
+h1, h2, h3{color: green;}
+h2{color:cyan;}
+h2[href]{color:orange;} */
 
-/* ===No comma in html=== */
-.a1{
-  color: turquoise;
-}
-.a2{
-  font-size: 38px;
-}
+/* ==="p" targets child span ... "div>span" does not */
+/* p{color: red;}
+div>span{color: blue;} */
+
+/* ==="p.p-green" > "div .pgreen" */
+/* div .p-green{color:cyan}
+p.p-green{color: green} */
+
+/* ==="id element" = "element id" ... CSS order wins */
+#id-blue p{color:blue}
+div #id-orange{color: orange}
