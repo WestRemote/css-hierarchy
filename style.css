@@ -24,7 +24,9 @@ span{
   /* float: right */
   /* display: block; */
 }
-
+p[test]{
+  font-size: 80px;
+}
 
 /* ===Equal specificity means CSS order wins=== */
 .box{
